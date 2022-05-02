@@ -1,3 +1,7 @@
+///////////////////////////
+// MAIN
+///////////////////////////
+
 .main {
   width: 100%;
   position: relative;
@@ -5,6 +9,11 @@
 
   @include flex;
   flex-direction: column;
+
+  ///////////////////////////
+  // CALENDAR BOX
+  ///////////////////////////
+
   .calendar-box {
     position: relative;
     width: inherit;
@@ -16,11 +25,14 @@
       width: 100%;
 
       background-color: $main-clr-100;
+      box-shadow: 1.2rem 0 2.4rem rgba($color: #000000, $alpha: 0.15);
+
       transition: all 0.3s;
-      &.line-hidden {
+      &.nav-bar-show {
         border-bottom: 3px solid transparent;
         border-left: 3px solid transparent;
         border-right: 3px solid transparent;
+        box-shadow: 1.2rem 0 2.4rem rgba($color: #000000, $alpha: 0);
 
         background-color: $grey-clr-100;
 
@@ -46,17 +58,16 @@
         width: 6.4rem;
         transition: all 0.3s;
         background-color: $main-clr-100;
-      }
-      .calendar-year-option-input:focus {
-        background-color: $accent-clr-100;
-        color: $grey-clr-100;
+        &:focus {
+          background-color: $accent-clr-100;
+          color: $grey-clr-100;
+        }
       }
     }
 
     .calendar-month-box {
       margin-left: 0.4rem;
       margin-right: 0.4rem;
-      // width: 100%;
       overflow-y: scroll;
       display: grid;
       grid-template-columns: 1fr;
@@ -78,22 +89,19 @@
           transition: rotate(90deg);
           width: 100%;
           background-color: $main-clr-100;
-          // height: 1.2rem;
           height: 3px;
           border: 0;
-          &.highlight {
-            background-color: $accent-clr-100;
-          }
         }
         .month-title {
           color: $main-clr-100;
           font-weight: 600;
           font-size: 1.2rem;
+          letter-spacing: 2px;
         }
         .year-title {
           color: $accent-clr-100;
           text-transform: uppercase;
-          letter-spacing: -0.25px;
+          letter-spacing: 0px;
           font-weight: 500;
           font-size: 1rem;
         }
@@ -112,6 +120,7 @@
               font-size: 0.8rem;
               text-transform: uppercase;
               font-weight: 500;
+              letter-spacing: 1.5px;
               &:last-child {
                 color: $accent-clr-100;
               }
@@ -140,51 +149,70 @@
               }
               &.day-special {
                 background-color: $accent-clr-100;
+                & .day-number {
+                  &:hover {
+                    color: $grey-clr-100;
+                  }
+                }
                 &:hover {
                   border: 2px solid $main-clr-100;
                 }
               }
               &.today {
-                transform: scale(1.025);
+                transform: scale(0.8);
                 background-color: $accent-clr-100;
-                color: $grey-clr-100;
+                & .day-number {
+                  color: $grey-clr-100;
+                  font-weight: 700;
+                }
+                &:hover {
+                  transform: scale(0.9);
+                  background-color: $main-clr-100;
+                  color: $grey-clr-100;
+                }
                 &.day-special {
                   background-color: $main-clr-100;
                   color: $grey-clr-100;
                   border: 3px solid $main-clr-90;
                 }
               }
-            }
-            .day-box:focus,
-            .day-box:hover {
-              background-color: $accent-clr-100;
-              &.day-special:focus,
-              &.day-special:hover {
-                background-color: $main-clr-100;
-                border: 3px solid $main-clr-90;
-              }
-              &.today:focus {
-                transform: scale(1.025);
-                background-color: $main-clr-100;
-                &.day-special {
+              &:focus,
+              &:hover {
+                transform: scale(0.8);
+                background-color: $accent-clr-100;
+                &.day-special:focus,
+                &.day-special:hover {
                   background-color: $main-clr-100;
                   border: 3px solid $main-clr-90;
+                }
+                &.today:focus {
+                  transform: scale(1.025);
+                  background-color: $main-clr-100;
+                  &.day-special {
+                    background-color: $main-clr-100;
+                    border: 3px solid $main-clr-90;
+                  }
                 }
               }
             }
           }
         }
       }
-    }
-    // First divider line in calendar
-    .calendar-month-box .month-box:first-child .divider-line {
-      background-color: transparent;
-    }
-    // First month-box
-    .calendar-month-box .month-box:first-child {
-      margin-top: -0.4rem;
+      // First divider line in calendar
+      & .month-box:first-child .divider-line {
+        background-color: transparent;
+      }
+      // First month-box
+      & .month-box:first-child {
+        margin-top: -0.4rem;
+      }
     }
   }
+
+  ///////////////////////////
+  // MODAL WINDOW
+  ///////////////////////////
+
   .calendar-modal-window {
     position: fixed;
     top: 45%;
@@ -204,7 +232,6 @@
     background-color: $main-clr-100;
 
     &.hidden.calendar-modal-window {
-      // display: none;
       pointer-events: none;
       opacity: 0;
     }
@@ -221,12 +248,10 @@
         .calendar-mw-day {
           color: $grey-clr-100;
           font-size: 1rem;
-          // background-color: $main-clr-100;
         }
         .calendar-mw-year {
           color: $accent-clr-100;
           font-size: 1rem;
-          // background-color: $main-clr-100;
         }
       }
     }
@@ -248,7 +273,6 @@
           color: $grey-clr-100;
           font-size: 0.8rem;
           color: $grey-clr-90;
-          // grid-column: 1;
         }
         .task {
           width: 100%;
@@ -269,20 +293,6 @@
             color: $grey-clr-100;
           }
         }
-        // .add-task-btn {
-        //   display: flex;
-        //   justify-content: center;
-        //   align-items: center;
-        //   background-color: $grey-clr-100;
-        //   border-radius: 50%;
-        //   aspect-ratio: 1;
-        //   // padding: 0.4rem;
-        //   width: 1.2rem;
-        //   height: 1.2rem;
-        //   margin-bottom: 0.4rem;
-        //   color: $main-clr-100;
-        //   // grid-column: 3;
-        // }
       }
       hr {
         width: 100%;
@@ -310,6 +320,11 @@
       }
     }
   }
+
+  ///////////////////////////
+  // BACKGROUND BLUR
+  ///////////////////////////
+
   .background-blur {
     pointer-events: none;
     filter: blur(5px);

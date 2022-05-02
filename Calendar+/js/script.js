@@ -1,15 +1,5 @@
 "use strict";
 
-const mainBox = document.querySelector(".main");
-mainBox.style.height = `${
-  parseFloat(getComputedStyle(document.body).height) -
-  parseFloat(getComputedStyle(document.querySelector(".header")).height)
-}`;
-// console.log(
-//   mainBox,
-//   parseFloat(getComputedStyle(document.body).height),
-//   parseFloat(getComputedStyle(document.querySelector(".header")).height)
-// );
 ///////////////////////////
 // Observers
 ///////////////////////////
@@ -25,10 +15,11 @@ function observers() {
   };
   const calendarOptionsObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
+      // Removes/Adds special effect based on intersecting
       if (!entry.isIntersecting) {
-        calendarOptions.classList.remove("line-hidden");
+        calendarOptions.classList.remove("nav-bar-show");
       } else {
-        calendarOptions.classList.add("line-hidden");
+        calendarOptions.classList.add("nav-bar-show");
       }
     });
   }, navObsOptions);
@@ -69,6 +60,7 @@ function calendar() {
   const calendarYearInput = document.querySelector(
     ".calendar-year-option-input"
   );
+  // All months with name and daysCount (February's daysCount change automatically based on year)
   const months = [
     { name: "January", daysCount: 31 },
     { name: "February", daysCount: 28 },
@@ -87,12 +79,12 @@ function calendar() {
     constructor(year, month) {
       this.year = year;
       this.month = month;
-      // this.weakNumber = weakNumber + 1;
 
       const This = this;
-      // Calculates February's days and returns full months array for current year
+      // Calculates February's days and returns full months array for set year
       const modifiedMonths = months.map(function (month) {
         if (month.name === "February") {
+          // Returns new object with with calculated months of February
           return {
             name: month.name,
             daysCount: This.calcLeapYear() ? 29 : 28,
@@ -115,48 +107,56 @@ function calendar() {
     // Creates month box
     createMonthBox() {
       const boxHTML = `
-    <div class='month-box'>
-    <hr class='divider-line'>
-    <p class='month-title'>${this.month}</p>
-    <p class='year-title'>${this.year}</p>
-    <div class='content'>
-    <div class='content-box'>
-    </div>
-    </div>
-    </div>`;
+        <div class='month-box'>
+        <hr class='divider-line'>
+        <p class='month-title'>${this.month}</p>
+        <p class='year-title'>${this.year}</p>
+        <div class='content'>
+        <div class='content-box'>
+        </div>
+        </div>
+        </div>`;
 
       calendarBox.insertAdjacentHTML("beforeend", boxHTML);
 
       let monthBox = document.querySelectorAll(".month-box");
+      // Month box content
       const content =
         monthBox[monthBox.length - 1].querySelector(".content-box");
 
+      // Cretes day names
       const dayNamesHTML = `
-    <p class='day-name'>Mon</p>
-    <p class='day-name'>Tue</p>
-    <p class='day-name'>Wen</p>
-    <p class='day-name'>Thu</p>
-    <p class='day-name'>Fri</p>
-    <p class='day-name'>Sat</p>
-    <p class='day-name'>Sun</p>
-    `;
+        <p class='day-name'>Mon</p>
+        <p class='day-name'>Tue</p>
+        <p class='day-name'>Wen</p>
+        <p class='day-name'>Thu</p>
+        <p class='day-name'>Fri</p>
+        <p class='day-name'>Sat</p>
+        <p class='day-name'>Sun</p>
+      `;
       content.insertAdjacentHTML("beforeend", dayNamesHTML);
 
       monthBox = document.querySelectorAll(".month-box");
       return monthBox[monthBox.length - 1];
     }
+    // Creates days for certain monthBox
     createDays(monthBox) {
+      // Checks if monthBox contains month-box class
       if (!monthBox?.classList.contains("month-box")) return;
 
       const contentBox = monthBox.querySelector(".content-box");
       const curMonth = this.months[this.findMonthIndex(this.month)];
 
+      // Calculates starting day
       const startingDay = new Date(`01-${this.month}-${this.year}`);
+      // Calculates last day
       const endingDay = new Date(
         `${curMonth.daysCount}-${this.month}-${this.year}`
       );
 
+      // Number of empty days to create on start
       const emptyDays = startingDay.getDay() === 0 ? 7 : startingDay.getDay();
+      // Creates empty days on start
       for (let i = 0; i < emptyDays - 1; i++) {
         createEmptyDay();
       }
@@ -165,23 +165,25 @@ function calendar() {
         const day = new Date(`${i + 1}-${this.month}-${this.year}`);
         createDay(day);
       }
+      // Creates empty days on end
       for (let i = endingDay.getDay(); i < 7; i++) {
         createEmptyDay();
       }
       function createDay(day) {
         // Creates day with 'day-special' class if day is Sunday
         const dayHTML = `
-      <button class='btn day-box ${day.getDay() === 0 ? "day-special" : ""} ${
-          new Date().toDateString() === day.toDateString() ? "today" : ""
-        }'>
-        <p class='day-number'>${day.getDate()}</p>
-      </button>`;
+          <button class='btn day-box ${
+            day.getDay() === 0 ? "day-special" : ""
+          } ${new Date().toDateString() === day.toDateString() ? "today" : ""}'>
+            <p class='day-number'>${day.getDate()}</p>
+          </button>`;
         contentBox.insertAdjacentHTML("beforeend", dayHTML);
       }
+      // Creates empty day
       function createEmptyDay() {
         const emptyDayHTML = `
-      <div class='day-box empty'>
-      </div>`;
+          <div class='day-box empty'>
+          </div>`;
         contentBox.insertAdjacentHTML("beforeend", emptyDayHTML);
       }
     }
@@ -191,11 +193,6 @@ function calendar() {
         (month) => month.name === curMonth
       );
       return monthIndex;
-    }
-    // Returns next month
-    findNextMonth(month) {
-      const nextMonthIndex = this.findMonthIndex(month) + 1;
-      return this.months[nextMonthIndex >= 12 ? 1 : nextMonthIndex];
     }
   }
 
@@ -218,20 +215,22 @@ function calendar() {
     modalWindow();
   }
 
+  // Changes year when enter is pressed, value is changed or element lost focus
   calendarYearInput?.addEventListener("keydown", function (e) {
     if (e.key === "Enter") changeYear();
   });
   calendarYearInput?.addEventListener("focusout", changeYear);
   calendarYearInput?.addEventListener("change", changeYear);
+  // Changes year to current year if logo is clicked
   document
     .querySelector(".logo-box")
     ?.addEventListener("click", () => changeYear(false));
-  // Changes year based on calendarYearInput value
-  function changeYear(value = true) {
+  // Changes year based on calendarYearInput value or if inputValue === false then it creates calendar for current year
+  function changeYear(inputValue = true) {
     createYearCalendar(
-      value ? +calendarYearInput.value : new Date().getFullYear()
+      inputValue ? +calendarYearInput.value : new Date().getFullYear()
     );
-    if (!value) {
+    if (!inputValue) {
       calendarYearInput.value = new Date().getFullYear();
     }
   }
@@ -243,14 +242,13 @@ function calendar() {
 
 function modalWindow() {
   const calendarBox = document.querySelector(".calendar-month-box");
-  let calendarModalWindowBlurOn = false;
   let info = {};
   let clickedDayBox;
 
   createCalendarModalWindow();
   const calendarModalWindow = document.querySelector(".calendar-modal-window");
 
-  // Hides modal window if back button is pressed
+  // Hides modal window if back button or escape is pressed
   calendarModalWindow
     .querySelector(".back-btn")
     .addEventListener("click", hideCalendarModalWindow);
@@ -260,7 +258,7 @@ function modalWindow() {
     }
   });
 
-  // Shows modal window if day button is pressed
+  // Shows modal window if day button or enter is pressed
   document.querySelectorAll(".month-box").forEach(function (monthBox) {
     monthBox.addEventListener("click", function (e) {
       displayCalendarModalWindowEvent(e);
@@ -277,6 +275,7 @@ function modalWindow() {
       e.target.closest(".day-box") &&
       !e.target.closest(".day-box").classList.contains("empty")
     ) {
+      // If monthBox is empty then it'll choose e.target (dayBox). Otherwise it'll search in parents for closes day-box class
       const dayBox = !monthBox ? e.target.closest(".day-box") : e.target;
       const day = +dayBox.textContent;
       const month = dayBox
@@ -295,12 +294,28 @@ function modalWindow() {
 
   // Displays modal window and sets its values
   function displayCalendarModalWindow(day, month, year, tasks) {
+    // Sets day and month
     calendarModalWindow.querySelector(
       ".calendar-mw-day"
-    ).textContent = `${day} ${month}`;
+    ).textContent = `${day}${getSufix(day)} ${month}`;
+    // Sets year
     calendarModalWindow.querySelector(
       ".calendar-mw-year"
     ).textContent = `${year}`;
+
+    // Returns sufix of a day
+    function getSufix(day) {
+      switch (day) {
+        case 1:
+          return "st";
+        case 2:
+          return "nd";
+        case 3:
+          return "rd";
+        default:
+          return "th";
+      }
+    }
 
     if (tasks) {
       const hourBoxes = [...calendarModalWindow.querySelectorAll(".hour-box")];
@@ -316,24 +331,31 @@ function modalWindow() {
     }
     // Turns on blur
     switchCalendarBoxBlur(true);
-    // Shows calendar modal window
+    // Shows modal window
     calendarModalWindow.classList.remove("hidden");
 
+    // Sets info of current day
     info = {
       day,
       month,
       year,
     };
 
+    // Focuses on modal window
     calendarModalWindow.querySelector(".task-input").focus();
   }
   // Hides modal window
   function hideCalendarModalWindow() {
+    // Focuses on clicked day box
     clickedDayBox.focus();
+    // Hides modal window
     calendarModalWindow.classList.add("hidden");
+    // Turns of blur
     switchCalendarBoxBlur(false);
 
+    // Saves values into info.tasks
     info.tasks = [...calendarModalWindow.querySelectorAll(".hour-box")].map(
+      // Returns values of a tasks in certain hours. If value is empty then returns empty string
       function (hourBox) {
         return hourBox.querySelector(".task-input").value || "";
       }
@@ -346,22 +368,29 @@ function modalWindow() {
       ".calendar-mw-content"
     );
 
+    // Deletes every hr element
     calendarModalWindowContent.querySelectorAll("hr").forEach(function (hr) {
       calendarModalWindowContent.removeChild(hr);
     });
+    // Deletes every br element
     calendarModalWindowContent.querySelectorAll("br").forEach(function (br) {
       calendarModalWindowContent.removeChild(br);
     });
+
+    // Creates all hours (00:00 - 23:00)
     const HTML = `${createHours()}`;
 
+    // Inserts hours into modal window's content
     calendarModalWindowContent.insertAdjacentHTML("beforeend", HTML);
     return document.querySelector(".calendar-modal-window");
 
     function createHours() {
+      // Deletes every element with hour-box class
       document
         .querySelectorAll(".hour-box")
         .forEach((hourBox) => hourBox.parentElement.removeChild(hourBox));
       const hoursHTML = [];
+      // Creates new hour element
       for (let i = 0; i < 24; i++) {
         const hourHTML = `
       <div class='hour-box'>
@@ -383,22 +412,21 @@ function modalWindow() {
   function switchCalendarBoxBlur(blurSwitch) {
     const on = calendarBox.classList.contains("background-blur");
     if (!blurSwitch) {
-      // document
-      // .querySelector(".background-blur")
-      // .removeEventListener("click", hideCalendarModalWindow);
+      // Removes background blur
       calendarBox.classList.remove("background-blur");
+      // Enables scroll
       document.body.style.overflow = "auto";
     } else {
+      // Makes background blur
       calendarBox.classList.add("background-blur");
-      // document
-      // .querySelector(".background-blur")
-      // ?.addEventListener("click", hideCalendarModalWindow);
+      // DIsables scroll
       document.body.style.overflow = "hidden";
     }
     calendarModalWindowBlurOn = on;
   }
-
+  // Saves tasks to localStorage
   function saveTasks() {
+    // Sets item in localStorage based on day, month and year in info object
     localStorage.setItem(
       `${info.day}-${info.month}-${info.year}`,
       `${info.tasks.join(";")}`

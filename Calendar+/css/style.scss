@@ -24,6 +24,7 @@ $accent-clr-100: #ff5e00;
 $accent-clr-90: #e65500;
 $grey-clr-100: #fff;
 $grey-clr-90: #e6e6e6;
+$grey-clr-30: #262626;
 
 ///////////////////////////
 // MIXINS
@@ -45,7 +46,6 @@ $grey-clr-90: #e6e6e6;
 body {
   font-size: 62.5%;
   font-family: "Roboto", sans-serif;
-  // position: relative;
   height: 100vh;
 }
 .btn:focus {
@@ -71,16 +71,10 @@ a:link {
 .btn {
   border: 0;
   background-color: transparent;
-  // padding: 0.4rem 0.8rem;
-  // border: 3px solid transparent;
-  // border-radius: 7px;
-  // &:hover {
-  //   border: 3px solid $main-clr-100;
-  // }
-  // &:active {
-  //   border: 3px solid $accent-clr-100;
-  // }
 }
+///////////////////////////
+// IMPORTS
+///////////////////////////
 
 @import "sections/header";
 @import "sections/main";

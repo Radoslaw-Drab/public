@@ -1,3 +1,11 @@
+///////////////////////////
+// QUERIES
+///////////////////////////
+
+///////////////////////////
+// 352px
+///////////////////////////
+
 @media only screen and (min-width: 22em) {
   .main {
     .calendar-box {
@@ -44,6 +52,10 @@
     }
   }
 }
+///////////////////////////
+// 400px
+///////////////////////////
+
 @media only screen and (min-width: 25em) {
   .main {
     .calendar-box {
@@ -66,6 +78,10 @@
     }
   }
 }
+///////////////////////////
+// 480px
+///////////////////////////
+
 @media only screen and (min-width: 30em) {
   .header {
     .header-box {
@@ -108,13 +124,17 @@
     }
   }
 }
+///////////////////////////
+// 912px
+///////////////////////////
+
 @media only screen and (min-width: 57em) {
   .header {
     .header-box {
       .logo-box {
         .logo {
-          width: 2.2rem;
-          height: 2.2rem;
+          width: 2.4rem;
+          height: 2.4rem;
         }
         .title-text {
           font-size: 1.8rem;
@@ -154,23 +174,27 @@
             }
           }
         }
-      }
-      .calendar-month-box .month-box:nth-child(2) .divider-line {
-        background-color: transparent;
-      }
-      .calendar-month-box .month-box:nth-child(2) {
-        margin-top: -0.4rem;
+        & .month-box:nth-child(2) .divider-line {
+          background-color: transparent;
+        }
+        & .month-box:nth-child(2) {
+          margin-top: -0.4rem;
+        }
       }
     }
   }
 }
+///////////////////////////
+// 1360px
+///////////////////////////
+
 @media only screen and (min-width: 85em) {
   .header {
     .header-box {
       .logo-box {
         .logo {
-          width: 2.4rem;
-          height: 2.4rem;
+          width: 3.2rem;
+          height: 3.2rem;
         }
         .title-text {
           font-size: 2.4rem;
@@ -210,12 +234,12 @@
             }
           }
         }
-      }
-      .calendar-month-box .month-box:nth-child(3) .divider-line {
-        background-color: transparent;
-      }
-      .calendar-month-box .month-box:nth-child(3) {
-        margin-top: -0.4rem;
+        & .month-box:nth-child(3) .divider-line {
+          background-color: transparent;
+        }
+        & .month-box:nth-child(3) {
+          margin-top: -0.4rem;
+        }
       }
     }
     .calendar-modal-window {
