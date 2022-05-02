@@ -1,0 +1,38 @@
+.header {
+  width: 100%;
+  // height: 3.6rem;
+
+  background-color: $grey-clr-100;
+  border-bottom: 3px solid $main-clr-100;
+  padding: 0.6rem 1.8rem;
+  .header-box {
+    width: 100%;
+    height: 100%;
+    @include flex(space-between);
+    .logo-box {
+      @include flex;
+      gap: 1.2rem;
+      .logo {
+        width: 1.8rem;
+        height: 1.8rem;
+        border: 0;
+      }
+      .title-text {
+        color: $main-clr-100;
+        letter-spacing: 2px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        span {
+          margin-left: 2px;
+          color: $accent-clr-100;
+          font-weight: 700;
+        }
+      }
+    }
+    .links {
+      a:link {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}

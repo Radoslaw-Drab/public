@@ -1,0 +1,246 @@
+@media only screen and (min-width: 22em) {
+  .main {
+    .calendar-box {
+      .calendar-month-box {
+        .month-box {
+          transform: scale(0.95);
+          .content {
+            .content-box {
+              column-gap: 0.2rem;
+              row-gap: 0.8rem;
+              .day-box {
+                .day-number {
+                  padding: 0.4rem 0.8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .calendar-modal-window {
+      .calendar-mw-header {
+        .mw-header-content {
+          .calendar-mw-day {
+            font-size: 1.2rem;
+          }
+          .calendar-mw-year {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .calendar-mw-content {
+        .hour-box {
+          .hour {
+            font-size: 1rem !important;
+          }
+          .task {
+            .task-input {
+              font-size: 1rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 25em) {
+  .main {
+    .calendar-box {
+      .calendar-month-box {
+        .month-box {
+          transform: scale(1);
+          .content {
+            .content-box {
+              column-gap: 0.4rem;
+              row-gap: 0.8rem;
+              .day-box {
+                .day-number {
+                  padding: 0.4rem 0.8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 30em) {
+  .header {
+    .header-box {
+      .links {
+        a:link {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  .main {
+    .calendar-box {
+      .calendar-month-box {
+        .month-box {
+          .month-title {
+            font-size: 1.4;
+          }
+          .year-title {
+            font-size: 1.2;
+          }
+          .content {
+            .content-box {
+              column-gap: 0.4rem;
+              row-gap: 0.8rem;
+              .day-box {
+                .day-number {
+                  padding: 0.6rem 1rem;
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    .footer-box {
+      font-size: 0.7rem;
+    }
+  }
+}
+@media only screen and (min-width: 57em) {
+  .header {
+    .header-box {
+      .logo-box {
+        .logo {
+          width: 2.2rem;
+          height: 2.2rem;
+        }
+        .title-text {
+          font-size: 1.8rem;
+        }
+      }
+      .links {
+        a:link {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .main {
+    .calendar-box {
+      .calendar-options-box {
+        .calendar-year-option-input {
+          font-size: 1rem;
+        }
+      }
+      .calendar-month-box {
+        grid-template-columns: repeat(2, 1fr);
+        .month-box {
+          .month-title {
+            font-size: 1.4rem;
+          }
+          .year-title {
+            font-size: 1.2rem;
+          }
+          .content {
+            .content-box {
+              column-gap: 0.2rem;
+              .day-box {
+                .day-number {
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .calendar-month-box .month-box:nth-child(2) .divider-line {
+        background-color: transparent;
+      }
+      .calendar-month-box .month-box:nth-child(2) {
+        margin-top: -0.4rem;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 85em) {
+  .header {
+    .header-box {
+      .logo-box {
+        .logo {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+        .title-text {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+  .main {
+    .calendar-box {
+      .calendar-options-box {
+        border-left: 3px solid $main-clr-100;
+        border-right: 3px solid $main-clr-100;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        .calendar-year-option-input {
+          font-size: 1.2rem;
+        }
+      }
+      .calendar-month-box {
+        column-gap: 1.8rem;
+        grid-template-columns: repeat(3, 1fr);
+        .month-box {
+          .month-title {
+            font-size: 1.4rem;
+          }
+          .year-title {
+            font-size: 1.2rem;
+          }
+          .content {
+            .content-box {
+              column-gap: 0.2rem;
+              .day-box {
+                .day-number {
+                  font-size: 1.1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .calendar-month-box .month-box:nth-child(3) .divider-line {
+        background-color: transparent;
+      }
+      .calendar-month-box .month-box:nth-child(3) {
+        margin-top: -0.4rem;
+      }
+    }
+    .calendar-modal-window {
+      .calendar-mw-header {
+        .mw-header-content {
+          .calendar-mw-day {
+            font-size: 1.6rem;
+          }
+          .calendar-mw-year {
+            font-size: 1.6rem;
+          }
+        }
+      }
+      .calendar-mw-content {
+        .hour-box {
+          .hour {
+            font-size: 1.4rem;
+          }
+          .task {
+            .task-input {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

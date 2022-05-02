@@ -1,0 +1,15 @@
+.footer {
+  width: 100%;
+  position: relative;
+
+  background-color: $main-clr-100;
+  .footer-box {
+    max-width: 110em;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    @include flex;
+
+    color: $grey-clr-90;
+    font-size: 0.6rem;
+  }
+}

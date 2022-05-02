@@ -1,0 +1,88 @@
+///////////////////////////
+// INFO
+///////////////////////////
+/*
+-- FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+-- FONT WEIGHTS:
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+-- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+///////////////////////////
+// COLORS
+///////////////////////////
+$main-clr-100: #6c17b6;
+$main-clr-90: #6115a4;
+$accent-clr-100: #ff5e00;
+$accent-clr-90: #e65500;
+$grey-clr-100: #fff;
+$grey-clr-90: #e6e6e6;
+
+///////////////////////////
+// MIXINS
+///////////////////////////
+@mixin flex($horizontal: center, $vertical: center) {
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
+
+///////////////////////////
+// GENERAL
+///////////////////////////
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+  // position: relative;
+  height: 100vh;
+}
+.btn:focus {
+  outline: 0;
+  border: 3px solid $accent-clr-90;
+}
+input:focus {
+  outline: 0;
+  border: 3px solid $accent-clr-90 !important;
+  border-radius: 5px !important;
+}
+a:link {
+  text-decoration: none;
+}
+///////////////////////////
+// HELPERS
+///////////////////////////
+
+.container {
+  max-width: 135em;
+  margin: 0 auto;
+}
+.btn {
+  border: 0;
+  background-color: transparent;
+  // padding: 0.4rem 0.8rem;
+  // border: 3px solid transparent;
+  // border-radius: 7px;
+  // &:hover {
+  //   border: 3px solid $main-clr-100;
+  // }
+  // &:active {
+  //   border: 3px solid $accent-clr-100;
+  // }
+}
+
+@import "sections/header";
+@import "sections/main";
+@import "sections/footer";
+@import "queries";
