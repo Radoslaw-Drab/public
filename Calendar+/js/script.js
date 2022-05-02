@@ -11,7 +11,7 @@ function observers() {
   const navObsOptions = {
     root: null,
     threshold: 0,
-    rootMargin: getComputedStyle(calendarOptions).height,
+    // rootMargin: getComputedStyle(calendarOptions).height,
   };
   const calendarOptionsObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -24,32 +24,6 @@ function observers() {
     });
   }, navObsOptions);
   calendarOptionsObserver.observe(mainHeader);
-
-  /*
-class MonthBoxObserver {
-  monthBoxObserver = new IntersectionObserver(this.callbackFunction(entries), {
-    root: null,
-    threshold: 0,
-  });
-  constructor(element) {
-    this.element = element;
-    monthBoxObserver.observe(this.element);
-  }
-
-  callbackFunction(entries) {
-    entries.forEach(function (entry) {
-      const dividerLine = document.querySelector(".month-box .divider-line");
-      if (entry.isIntersecting) dividerLine.classList.add("highlight");
-      else dividerLine.classList.remove("highlight");
-    });
-  }
-}
-
-const monthBoxes = document.querySelectorAll(".month-box");
-monthBoxes.forEach(function (monthBox) {
-  new MonthBoxObserver(monthBox);
-});
-*/
 }
 ///////////////////////////
 // Calendar logic
