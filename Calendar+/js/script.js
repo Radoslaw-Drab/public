@@ -243,6 +243,7 @@ function calendar() {
 function modalWindow() {
   const calendarBox = document.querySelector(".calendar-month-box");
   let info = {};
+  let calendarModalWindowBlurOn = false;
   let clickedDayBox;
 
   createCalendarModalWindow();
