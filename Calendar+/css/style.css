@@ -104,6 +104,11 @@ a:link {
 
 .header .header-box .links a:link {
   font-size: 0.7rem;
+  border-bottom: 2px solid transparent;
+}
+
+.header .header-box .links a:hover {
+  border-bottom: 2px solid #6c17b6;
 }
 
 .main {
@@ -138,7 +143,7 @@ a:link {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: #6c17b6;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border-bottom: 3px solid #6c17b6;
@@ -159,10 +164,16 @@ a:link {
   border-bottom: 3px solid transparent;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
+  background-color: #fff;
+}
+
+.main .calendar-box .calendar-options-box.line-hidden .calendar-year-option-input {
+  background-color: #fff;
+  color: #ff5e00;
 }
 
 .main .calendar-box .calendar-options-box .calendar-year-option-input {
-  color: #ff5e00;
+  color: #fff;
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 500;
@@ -171,6 +182,9 @@ a:link {
   padding: 0.4rem 0.8rem 0.4rem 0.4rem;
   border: 3px solid transparent;
   width: 6.4rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: #6c17b6;
 }
 
 .main .calendar-box .calendar-options-box .calendar-year-option-input:focus {
@@ -271,6 +285,10 @@ a:link {
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+.main .calendar-box .calendar-month-box .month-box .content .content-box .day-name:last-child {
+  color: #ff5e00;
 }
 
 .main .calendar-box .calendar-month-box .month-box .content .content-box .day-box {

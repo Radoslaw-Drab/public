@@ -32,6 +32,10 @@
     .links {
       a:link {
         font-size: 0.7rem;
+        border-bottom: 2px solid transparent;
+      }
+      a:hover {
+        border-bottom: 2px solid $main-clr-100;
       }
     }
   }
