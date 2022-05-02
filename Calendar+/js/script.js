@@ -213,6 +213,9 @@ function calendar() {
     });
     // Creates new modal window
     modalWindow();
+
+    // Changes to set year of an calendar title
+    document.head.querySelector("title").textContent = `Calendar+ - ${year}`;
   }
 
   // Changes year when enter is pressed, value is changed or element lost focus
