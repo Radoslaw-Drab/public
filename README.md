@@ -19,7 +19,7 @@ Everything was created by me including design and icon. Optimized for small devi
 3. Vectornator (Version 4.7.1 22662)
 4. GitHub Desktop (Version 3.0.0)
 
-  **Note** all data is saved to local storage of a browser so it'll save your task only to certain browser.
+  **Note:** all data is saved to local storage of a browser so it'll save your task only to certain browser.
 
   [Source Code](https://github.com/Radoslaw-Drab/Projects-Public/tree/main/Calendar%2B)
 
