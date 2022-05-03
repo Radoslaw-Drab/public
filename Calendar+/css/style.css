@@ -40,7 +40,7 @@ a:link {
 }
 
 .container {
-  max-width: 135em;
+  max-width: 140em;
   margin: 0 auto;
 }
 
@@ -627,6 +627,9 @@ a:link {
   .main .calendar-box .calendar-month-box .month-box .content .content-box .day-box .day-number {
     padding: 0.6rem 1rem;
     font-size: 1.2rem;
+  }
+  .main .calendar-modal-window {
+    max-width: 50rem;
   }
   .footer .footer-box {
     font-size: 0.7rem;
