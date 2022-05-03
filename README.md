@@ -14,9 +14,9 @@ Here are all of my projects that I've published
   3. JavaScript
 
   #### Apps I've used:
-  1. Visual Studio Code (March 2022 version 1.66)
-  2. Google Chrome (Version 100.0.4896.127) / Safari (Version 15.4 17613.1.17.1.13)
-  3. Vectornator (Version 4.7.1 22662)
+1. Visual Studio Code (March 2022 version 1.66)
+2. Google Chrome (Version 100.0.4896.127) / Safari (Version 15.4 17613.1.17.1.13)
+3. Vectornator (Version 4.7.1 22662)
 
   **Note** all data is saved to local storage of a browser so it'll save your task only to certain browser.
 
