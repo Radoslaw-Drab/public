@@ -3,7 +3,7 @@ Here are all of my projects that I've published
 
 ## Projects:
 
-## Table of contents
+### Table of contents
 - [Calendar+](#Calendar+)
 - [Feddit](#Feddit)
 
