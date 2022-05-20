@@ -36,6 +36,7 @@ Everything was created by me including design and icon. Optimized for small devi
 1. HTML5
 2. SCSS
 3. JavaScript
+4. [Giphy API](https://developers.giphy.com/)
 
 #### Apps I've used:
 1. Visual Studio Code (March 2022 version 1.66)
