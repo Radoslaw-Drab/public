@@ -28,6 +28,7 @@ Everything was created by me including design and icon. Optimized for small devi
 
   [Source Code](https://github.com/Radoslaw-Drab/Projects-Public/tree/main/Calendar%2B)
 
+<hr>
 [Top](#table-of-contents)
 <hr>
 
@@ -54,5 +55,6 @@ Everything was created by me including design and icon. Optimized for small devi
 
   [Source Code](https://github.com/Radoslaw-Drab/Projects-Public/tree/main/Feddit)
 
+<hr>
 [Top](#table-of-contents)
 <hr>
