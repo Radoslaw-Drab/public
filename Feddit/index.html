@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Feddit is a fake reddit. Portfolio" />
+    <link rel="icon" type="image/x-icon" href="./img/logo/favicon.png" />
+
+    <title>Feddit</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/script.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="content container">
+      <header class="header">
+        <div class="top-bar">
+          <nav class="nav-box">
+            <img src="img/nav.svg" alt="Nav image" class="icon nav-icon" />
+          </nav>
+          <div class="search-box">
+            <img
+              src="img/search.svg"
+              alt="Search icon"
+              class="icon search-icon"
+            />
+            <input
+              type="text"
+              name="search-bar"
+              class="search-bar-input"
+              placeholder="Search"
+            />
+          </div>
+          <!-- img/account.jpg -->
+          <div class="account-box">
+            <img
+              src="img/logo/logo.png"
+              alt="Account image"
+              class="icon account-icon"
+            />
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <a href="#" class="tab news-tab">News</a>
+          <a href="#" class="tab home-tab selected">Home</a>
+          <a href="#" class="tab popular-tab">Popular</a>
+          <a href="#" class="tab awarded-tab">Awarded</a>
+        </div>
+      </header>
+      <main class="main">
+        <div class="loading-box">
+          <div class="outer-circle">
+            <div class="blank-space-outer"></div>
+            <div class="inner-circle">
+              <div class="blank-space-inner"></div>
+              <div class="center-point"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <nav class="nav">
+          <button class="btn nav-btn home-page selected">
+            <img
+              src="img/home.svg"
+              alt="Home page icon"
+              class="icon home-icon"
+            />
+          </button>
+          <button class="btn nav-btn browser-page">
+            <img
+              src="img/browser.svg"
+              alt="Browser page icon"
+              class="icon browser-icon"
+            />
+          </button>
+          <button class="btn nav-btn create-post-page">
+            <img
+              src="img/create-post.svg"
+              alt="Create post icon"
+              class="icon post-icon"
+            />
+          </button>
+          <button class="btn nav-btn chats-page">
+            <img
+              src="img/chats.svg"
+              alt="Chats page icon"
+              class="icon chats-icon"
+            />
+          </button>
+          <button class="btn nav-btn inbox-page">
+            <img
+              src="img/inbox.svg"
+              alt="Inbox page icon"
+              class="icon inbox-icon"
+            />
+          </button>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

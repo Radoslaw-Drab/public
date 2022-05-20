@@ -1,0 +1,56 @@
+.footer {
+  z-index: 100;
+  background-color: $grey-clr-90;
+  border-top: 1px solid $grey-clr-50;
+
+  position: sticky;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 0.8rem 1.2rem;
+  .nav {
+    @include flex(space-around);
+    .btn {
+      .icon {
+        transition: all 0.3s;
+      }
+      &.selected {
+        .icon {
+          filter: $grey-clr-10-f;
+        }
+      }
+      &:hover {
+        .icon {
+          filter: $grey-clr-10-f;
+          transform: scale(1.05);
+        }
+      }
+    }
+    .icon {
+      filter: $grey-clr-50-f;
+    }
+    .inbox-page {
+      position: relative;
+      &::before {
+        content: "1";
+        z-index: 10;
+
+        position: absolute;
+        right: -10px;
+        top: -5px;
+        width: 1.6rem;
+        height: 1.6rem;
+
+        border-radius: 50%;
+
+        background-color: $main-clr-100;
+        color: $grey-clr-10;
+
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+///////////////////////////
+// INFO
+///////////////////////////
+/*
+-- FONT SIZE SYSTEM (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+-- FONT WEIGHTS:
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+-- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+///////////////////////////
+// COLORS
+///////////////////////////
+$main-clr-100: #f50;
+$main-clr-100-f: invert(33%) sepia(90%) saturate(2100%) hue-rotate(3deg)
+  brightness(105%) contrast(104%);
+
+$accent-clr-110: #0af;
+$accent-clr-110-f: invert(57%) sepia(96%) saturate(4034%) hue-rotate(176deg)
+  brightness(107%) contrast(105%);
+$accent-clr-100: #07f;
+
+$grey-clr-100: #000;
+$grey-clr-90: #111;
+$grey-clr-80: #222;
+$grey-clr-50: #666;
+$grey-clr-50-f: invert(41%) sepia(0%) saturate(0%) hue-rotate(24deg)
+  brightness(96%) contrast(87%);
+$grey-clr-10: #ccc;
+$grey-clr-10-f: invert(76%) sepia(34%) saturate(1%) hue-rotate(318deg)
+  brightness(100%) contrast(93%);
+
+///////////////////////////
+// MIXINS
+///////////////////////////
+@mixin flex($horizontal: center, $vertical: center) {
+  display: flex;
+  justify-content: $horizontal;
+  align-content: $vertical;
+}
+/////////////////////////////
+// GENERAL
+///////////////////////////
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  // height: 100vh;
+  color: $grey-clr-10;
+  font-family: "Roboto", sans-serif;
+  background-color: $grey-clr-100;
+}
+.content {
+  position: relative;
+
+  margin: 0 auto;
+
+  min-height: 100vh;
+  max-width: 80rem;
+
+  background-color: $grey-clr-100;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+  color: $grey-clr-50;
+  padding: 0.4rem 0.8rem;
+  border: 1.5px solid transparent;
+}
+input {
+  border: 2px solid transparent;
+  padding: 0.6rem;
+
+  outline: none;
+  &:focus {
+    border-bottom: 2px solid $main-clr-100;
+  }
+}
+
+//////////////////////////////////////////////////////
+// HELPERS
+//////////////////////////////////////////////////////
+
+.container {
+  width: 100%;
+}
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.btn {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+//////////////////////////////////////////////////////
+// IMPORT
+//////////////////////////////////////////////////////
+
+@import "sections/header";
+@import "sections/main";
+@import "sections/footer";

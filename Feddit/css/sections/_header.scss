@@ -1,0 +1,111 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  @include flex;
+  gap: 0.8rem;
+  flex-direction: column;
+
+  background-color: $grey-clr-90;
+
+  padding: 0.8rem 1.2rem;
+  padding-bottom: 0;
+  .top-bar {
+    display: grid;
+    grid-template-columns: auto 70fr auto;
+    column-gap: 1.2rem;
+    align-items: center;
+
+    .nav-box {
+      transition: all 0.3s;
+      .nav-icon {
+        filter: $grey-clr-10-f;
+      }
+      &:hover {
+        transform: scale(1.05);
+        .nav-icon {
+          filter: $main-clr-100-f;
+        }
+      }
+    }
+    .search-box {
+      @include flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      border-radius: 5px;
+
+      background-color: $grey-clr-80;
+
+      .search-icon {
+        filter: $grey-clr-50-f;
+        margin-left: 0.4rem;
+      }
+      .search-bar-input {
+        width: 100%;
+
+        color: $grey-clr-10;
+
+        background-color: $grey-clr-80;
+      }
+    }
+    .account-box {
+      position: relative;
+      .account-icon {
+        border-radius: 50%;
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background-color: #090;
+        border: 2.5px solid $grey-clr-100;
+      }
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  .bottom-bar {
+    @include flex(space-around);
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    a:link,
+    a:visited {
+      position: relative;
+
+      text-decoration: none;
+      color: $grey-clr-50;
+      padding: 0.8rem 0.8rem 1.2rem 0.8rem;
+      // &::before {
+      //   content: "";
+      //   height: 1px;
+      //   width: 100px;
+
+      //   bottom: 0;
+      //   left: 50%;
+
+      //   transform: translateX(-50%);
+      //   background-color: $accent-clr-100;
+      // }
+      &:hover,
+      &.selected {
+        // &::before {
+        //   width: 100%;
+        // }
+        color: $grey-clr-10;
+        border-bottom: 1.5px solid $accent-clr-100;
+      }
+    }
+  }
+}
