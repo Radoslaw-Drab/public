@@ -2,6 +2,11 @@
 Here are all of my projects that I've published
 
 ## Projects:
+
+## Table of contents
+- [Calendar+](#Calendar+)
+- [Feddit](#Feddit)
+
 ### [Calendar+](https://calendar-plus-rd.netlify.app)
 
 It took about a week to make (26 April 2022 - 3 May 2022). <br>
