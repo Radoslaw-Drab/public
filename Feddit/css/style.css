@@ -55,6 +55,26 @@ input:focus {
   border-bottom: 2px solid #f50;
 }
 
+.giphy {
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: #ccc;
+  font-size: 1.2rem;
+  background-color: #0af;
+  padding: 0.4rem 1.2rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translateX(-95%);
+          transform: translateX(-95%);
+}
+
+.giphy:hover {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
 .container {
   width: 100%;
 }

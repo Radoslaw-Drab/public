@@ -89,6 +89,25 @@ input {
     border-bottom: 2px solid $main-clr-100;
   }
 }
+.giphy {
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  color: $grey-clr-10;
+  font-size: 1.2rem;
+  background-color: $accent-clr-110;
+
+  padding: 0.4rem 1.2rem;
+
+  transition: all 0.3s;
+
+  transform: translateX(-95%);
+  &:hover {
+    transform: translateX(0);
+  }
+}
 
 //////////////////////////////////////////////////////
 // HELPERS
