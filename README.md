@@ -8,6 +8,8 @@ Here are all of my projects that I've published
 
 - [Calendar+](#Calendar+)
 - [Feddit](#Feddit)
+- [Date Widget](#date-widget)
+- [AppIcons Widget](#appicons-widget)
 
 <hr>
 
