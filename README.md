@@ -69,7 +69,9 @@ Everything was created by me including design and icon. Optimized for small devi
 
 [Top](#table-of-contents)
 
-<hr>### Date Widget
+<hr>
+
+### Date Widget
 
 It took about 2 days to make (3 September 2022 - 5 September 2022). <br>
 Widget provides user with fully customizable time, date and day of the week information on the screen of user's Mac. <br>
@@ -94,7 +96,9 @@ Optimized for all screen sizes.<br>
 
 [Top](#table-of-contents)
 
-<hr>### AppIcons Widget
+<hr>
+
+### AppIcons Widget
 
 It took about 3 days to make (5 September 2022 - 8 September 2022). <br>
 Widget provides user with fully customizable buttons to improve workflow on user's Mac. <br>
